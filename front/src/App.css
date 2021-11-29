@@ -1,6 +1,70 @@
-.page {
-  margin-top: 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+
+body {
+  background-color: #e6ddc4;
+}
+
+.calc {
+  font-family: 'Road Rage', crusive;
+  margin-top: 3vh;
+  margin-left: 20vw;
+  width: 50vw;
+  background-color: #6e7c7c;
+  border: black 0.3vh solid;
+}
+.buttonsDiv {
+  display: grid;
+  grid-template-columns: 12.5vw 12.5vw 12.5vw 12.5vw;
+  grid-template-rows: 12vh 12vh 12vh 12vh 12vh;
+
+  /* grid-template-rows: ; */
+}
+.operatorButton {
+  background-color: #ffb26b;
+  font-size: 7vh;
+}
+#display {
+  text-align: left;
+  background-color: #dbe2ef;
+  font-size: 7vh;
+  border: #3f72af 0.3vh solid;
+  border-radius: 7%;
+}
+
+#clear {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: #ff7171;
+  font-size: 7vh;
+}
+#equals {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  background-color: #ffb26b;
+}
+#zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+button {
+  font-family: 'Road Rage', crusive;
+  margin: 0.3vh;
+  font-size: 5vh;
+  border: #112d4e 0.3vh solid;
+  border-radius: 7%;
+  background-color: #c9d8b6;
+}
+
+button:hover {
+  border: white 0.3vh solid;
+}
+
+span {
+  margin-left: 2vh;
 }

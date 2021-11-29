@@ -9,6 +9,7 @@ function Calculator(){
     let flagResult =false; //say if whatshown on the display is result or not
 
 
+    //this function check if its possiable to add '.' to the display
     function isPossiableToDecimal(string){
         for(let i=string.length-1;i>=0;i--){
             console.log(string.charAt(i));
@@ -83,24 +84,27 @@ function Calculator(){
     }
 
 
-    return (<div><Display data={display}/>
-                <button onClick={()=>{makeEqual()}}id="equals">=</button>
-                <NumberButton id="zero" changeDisplay={addNumberForDisplay} number={"0"} />
+    return (<div className="calc">
+        <Display data={display}/>
+        <div className="buttonsDiv">
+                <OperatorButton id="clear" operator={"AC"} changeDisplay={makeOperation}/>
+                <OperatorButton id="divide" operator={"/"} changeDisplay={makeOperation}/>
+                <OperatorButton id="multiply" operator={"*"} changeDisplay={makeOperation}/>
                 <NumberButton id="one" changeDisplay={addNumberForDisplay} number={"1"} />
                 <NumberButton id="two" changeDisplay={addNumberForDisplay} number={"2"} />
                 <NumberButton id="three" changeDisplay={addNumberForDisplay} number={"3"} />
+                <OperatorButton id="add" operator={"+"} changeDisplay={makeOperation}/>
                 <NumberButton id="four" changeDisplay={addNumberForDisplay} number={"4"} />
                 <NumberButton id="five" changeDisplay={addNumberForDisplay} number={"5"} />
                 <NumberButton id="six" changeDisplay={addNumberForDisplay} number={"6"} />
+                <OperatorButton id="subtract" operator={"-"} changeDisplay={makeOperation}/>
                 <NumberButton id="seven" changeDisplay={addNumberForDisplay} number={"7"} />
                 <NumberButton id="eight" changeDisplay={addNumberForDisplay} number={"8"} />
                 <NumberButton id="nine"changeDisplay={addNumberForDisplay} number={"9"} />
-                <OperatorButton id="add" operator={"+"} changeDisplay={makeOperation}/>
-                <OperatorButton id="subtract" operator={"-"} changeDisplay={makeOperation}/>
-                <OperatorButton id="divide" operator={"/"} changeDisplay={makeOperation}/>
-                <OperatorButton id="multiply" operator={"*"} changeDisplay={makeOperation}/>
-                <OperatorButton id="clear" operator={"AC"} changeDisplay={makeOperation}/>
+                <NumberButton id="zero" changeDisplay={addNumberForDisplay} number={"0"} />
                 <button id="decimal" onClick={()=>addNumberForDisplay(".")}>.</button>
+                <button onClick={()=>{makeEqual()}}id="equals">=</button>
+                </div>
             </div>
     )
 } 
